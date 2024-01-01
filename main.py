@@ -28,11 +28,13 @@ if __name__ == '__main__':
 
     # Task 1:
     df_electricity = read_csv('Electricity')
-    electricity_data_list = df_electricity.to_dict(orient='records')
-    mongo_db['electricity'].insert_many(electricity_data_list)
-
+    # df_electricity.to_csv('df_electricity.csv', index=False)
+    # electricity_data_list = df_electricity.to_dict(orient='records')
+    # mongo_db['electricity'].insert_many(electricity_data_list)
+    #
     df_gas = read_csv('Gas')
-    for index, row in df_gas.iterrows():
-        data_dict = row.to_dict()
-        mongo_db['gas'].insert_one(data_dict)
+    df_gas.to_csv('df_gas.csv', index=False)
+    # for index, row in df_gas.iterrows():
+    #     data_dict = row.to_dict()
+    #     mongo_db['gas'].insert_one(data_dict)
 
